@@ -14,7 +14,7 @@ export default function Questions({onChecked}) {
     const result= useSelector(state => state.result.result) 
 
 
-    const [{isLoading, apiData, serverError}] = useFetchQuestion()
+    const [{isLoading, serverError}] = useFetchQuestion()
     
 
     const questions = useSelector(state => state.questions.queue[state.questions.trace])
@@ -22,7 +22,7 @@ export default function Questions({onChecked}) {
 
     useEffect(() => {
     dispatch(updateResult({trace, checked}))
-    },[checked])
+    }, );
 
     function onSelect(i){
         onChecked(i)
@@ -50,7 +50,7 @@ export default function Questions({onChecked}) {
                 />
 
                 <label className='text-primary' htmlFor={`q${i}-option`}>{q}</label>
-                <div className={`check ${result[trace] == i ? 'checked' : ''}`}></div>
+                <div className={`check ${result[trace] === i ? 'checked' : ''}`}></div>
             </li>
                 ))
             }

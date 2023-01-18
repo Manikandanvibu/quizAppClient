@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Questions from "./Questions";
 import {MoveNextQuestion, MovePrevQuestion} from '../hooks/FetchQuestion'
 import{PushAnswer} from '../hooks/setResult'
@@ -68,3 +68,5 @@ export default function Quiz(){
     </div> 
   )
 }
+
+
